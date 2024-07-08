@@ -19,7 +19,7 @@ brew install nowplaying-cli
 cp config.default.json config.json
 ```
 
-### Get Slack tokens
+#### Get Slack tokens
 
 Help coming soon
 
