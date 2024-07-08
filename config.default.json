@@ -1,0 +1,6 @@
+{
+    "slack-cookie-token": "YOUR_SLACK_COOKIE_TOKEN",
+    "slack-token": "YOUR_SLACK_TOKEN",
+    "time-format": "%X",
+    "emoji-name": "my-album-art"
+}
