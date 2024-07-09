@@ -201,7 +201,7 @@ try:
     with open("config.json") as config_file:
         config = json.load(config_file)
 except IOError as error:
-    print('Unable to read `config.json` file')
+    print('Unable to read `config.json` file. Run `python3 set-up-configuration.py`.')
     quit()
 
 try:

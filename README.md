@@ -16,20 +16,10 @@ brew install nowplaying-cli
 ### 2. Create and update your `config.json` file
 
 ```bash
-cp config.default.json config.json
+python3 set-up-configuration.py
 ```
 
-#### Get Slack tokens
-
-Help coming soon
-
-#### Update `emoji-name` _(optional)_
-
-Replace `my-album-art` with your desired Slack emoji name
-
-#### Update `time-format` _(optional)_
-
-Replace `%X` with your desired [datetime formatting string](https://strftime.org/)
+This will help you get your slack authentication tokens, configure the name you want for your custom album art emoji, and set up the time format for your logs.
 
 ### 3. Start your media player
 
