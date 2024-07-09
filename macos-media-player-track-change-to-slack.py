@@ -254,6 +254,9 @@ while True:
     if any(x in current_media_info['title'] for x in (':05', ':06', ':15', ':30', ' | ')):
         current_media_info = previous_media_info
 
+    if current_media_info['artist'] == '' or current_media_info['title'] == '':
+        current_media_info = previous_media_info
+
     if current_media_info['artist'] != previous_media_info['artist'] or current_media_info['title'] != previous_media_info['title']:
         previous_media_info = current_media_info
         set_slack_status()
