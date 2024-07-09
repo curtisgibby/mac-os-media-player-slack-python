@@ -8,14 +8,14 @@ I wanted to be able to push my now-listening status (including album art) to my 
 
 ### 1. Clone this repo
 
-### 1. Install the dependencies
+### 2. Install the dependencies
 
 ```bash
 pip3 install -r ./requirements.txt
 brew install nowplaying-cli
 ```
 
-### 1. Create and update your `config.json` file
+### 3. Create and update your `config.json` file
 
 ```bash
 python3 set-up-configuration.py
@@ -23,11 +23,11 @@ python3 set-up-configuration.py
 
 This will help you get your slack authentication tokens, configure the name you want for your custom album art emoji, and set up the time format for your logs.
 
-### 1. Start your media player
+### 4. Start your media player
 
 You need to be playing your media _before_ moving on to step 5.
 
-### 1. Run the track change listener script
+### 5. Run the track change listener script
 
 ```bash
 python3 macos-media-player-track-change-to-slack.py
