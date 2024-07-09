@@ -1,5 +1,7 @@
 import json
+import os
 import pyperclip
+import pwd
 import re
 import shutil
 
@@ -48,6 +50,10 @@ default_time_format = config.get('time-format', '%X')
 config['time-format'] = input("Enter the time formatting string (from https://strftime.org/) you want to use for the log (defaults to {0}): ".format(default_time_format)) or default_time_format
 
 default_emoji_name = config.get('emoji-name', 'my-album-art')
+if default_emoji_name == 'my-album-art':
+    username = pwd.getpwuid(os.getuid())[0]
+    username = "".join(filter(str.isalnum, username.lower()))
+    default_emoji_name = username + '-album-art'
 config['emoji-name'] = input("Enter the emoji name you want to use (defaults to {0}): ".format(default_emoji_name)) or default_emoji_name
 
 with open(config_filepath, 'w') as config_file:
