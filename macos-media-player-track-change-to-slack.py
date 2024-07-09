@@ -84,11 +84,11 @@ def ensure_slack_does_not_have_emoji():
     return False
 
 def upload_file_to_slack(local_file):
-    slack_does_not_have_emoji = ensure_slack_does_not_have_emoji()
-    if not slack_does_not_have_emoji:
+    if not os.path.exists(local_file):
         return False
 
-    if not os.path.exists(local_file):
+    slack_does_not_have_emoji = ensure_slack_does_not_have_emoji()
+    if not slack_does_not_have_emoji:
         return False
 
     with open(local_file, 'rb') as f:
