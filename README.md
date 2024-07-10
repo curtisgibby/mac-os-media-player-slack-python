@@ -23,6 +23,10 @@ python3 set-up-configuration.py
 
 This will help you get your slack authentication tokens, configure the name you want for your custom album art emoji, and set up the time format for your logs.
 
+#### Add artist / title blacklists _(optional)_
+
+To prevent specific tracks from being sent to Slack.
+
 ### 4. Start your media player
 
 You need to be playing your media _before_ moving on to step 5.
@@ -58,7 +62,6 @@ If the script is unable to create the album-art emoji (because of a bad token, n
 
 ## Do you have any improvements planned?
 
-- Add artist and/or song title blacklists to prevent specific tracks from being sent to Slack.
 - Check the current play time to more accurately determine an end time for the Slack status (instead of assuming that the whole song still needs to be played).
 - Consolidate the Mac, [Windows](https://github.com/curtisgibby/winrt-slack-python), and [Linux](https://github.com/curtisgibby/mpris-slack-python) versions of this script (so that the OS-specific parts of the process are pulled out into modules, and the common stuff can all be run in a single python script).
 - If possible, get rid of the external dependency on `nowplaying-cli`. (If you know how to get this data from native Python APIs, please add an answer to [my Stack Overflow question](https://stackoverflow.com/questions/78609762/how-can-i-use-pythons-mpnowplayinginfocenter-to-get-current-song-information-fr).)

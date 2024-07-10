@@ -254,8 +254,10 @@ while True:
     if current_media_info is None:
         current_media_info = previous_media_info
 
-    # Avoid sending advertisement titles as now-listening statuses
-    if any(x in current_media_info['title'] for x in (':05', ':06', ':15', ':30', ' | ')):
+    if any(x in current_media_info['title'] for x in config['title-blacklist']):
+        current_media_info = previous_media_info
+
+    if any(x in current_media_info['artist'] for x in config['artist-blacklist']):
         current_media_info = previous_media_info
 
     if current_media_info['artist'] == '' or current_media_info['title'] == '':

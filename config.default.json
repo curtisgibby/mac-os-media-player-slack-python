@@ -2,5 +2,7 @@
     "slack-cookie-token": "YOUR_SLACK_COOKIE_TOKEN",
     "slack-token": "YOUR_SLACK_TOKEN",
     "time-format": "%X",
+    "artist-blacklist": [],
+    "title-blacklist": [],
     "emoji-name": "my-album-art"
 }
