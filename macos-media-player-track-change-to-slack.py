@@ -1,4 +1,3 @@
-from MediaPlayer import MPNowPlayingInfoCenter
 import asyncio
 import base64
 import calendar
