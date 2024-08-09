@@ -1,3 +1,4 @@
+from MediaPlayer import MPNowPlayingInfoCenter
 import asyncio
 import base64
 import calendar
@@ -232,6 +233,16 @@ except Exception as error:
     emoji_name = 'my-album-art'
 
 try:
+    title_blacklist = config['title-blacklist']
+except Exception as error:
+    title_blacklist = []
+
+try:
+    artist_blacklist = config['artist-blacklist']
+except Exception as error:
+    artist_blacklist = []
+
+try:
     if slack_token == '':
         raise Exception('empty string')
     if slack_token == 'YOUR_SLACK_TOKEN' :
@@ -254,10 +265,10 @@ while True:
     if current_media_info is None:
         current_media_info = previous_media_info
 
-    if any(x in current_media_info['title'] for x in config['title-blacklist']):
+    if any(x in current_media_info['title'] for x in title_blacklist):
         current_media_info = previous_media_info
 
-    if any(x in current_media_info['artist'] for x in config['artist-blacklist']):
+    if any(x in current_media_info['artist'] for x in artist_blacklist):
         current_media_info = previous_media_info
 
     if current_media_info['artist'] == '' or current_media_info['title'] == '':
